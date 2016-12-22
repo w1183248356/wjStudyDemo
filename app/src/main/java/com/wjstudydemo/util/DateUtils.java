@@ -1,4 +1,4 @@
-package com.wjstudydemo.wj.wjstudy.demo.util;
+package com.wjstudydemo.util;
 
 import android.text.TextUtils;
 import android.text.format.DateFormat;

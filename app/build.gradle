@@ -67,7 +67,7 @@ android {
     signingConfigs {
         debug {
             try {
-                storeFile file("../wjStudyDemo.jks")
+                storeFile file("../appInfo/wjStudyDemo.jks")
                 storePassword KEYSTORE_PASSWORD
                 keyAlias KEY_ALIAS
                 keyPassword KEY_PASSWORD
@@ -78,7 +78,7 @@ android {
 
         develop {
             try {
-                storeFile file("../apkinfo/qpwa_b2b_app.jks")
+                storeFile file("../appinfo/wjStudyDemo.jks")
                 storePassword KEYSTORE_PASSWORD
                 keyAlias KEY_ALIAS
                 keyPassword KEY_PASSWORD
@@ -89,7 +89,7 @@ android {
 
         release {
             try {
-                storeFile file("../apkinfo/qpwa_b2b_app.jks")
+                storeFile file("../appinfo/wjStudyDemo.jks")
                 storePassword KEYSTORE_PASSWORD
                 keyAlias KEY_ALIAS
                 keyPassword KEY_PASSWORD
@@ -240,4 +240,20 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //震动监听
 //    compile 'com.squareup:seismic:1.0.2'
+    //mvp框架
+    compile 'info.android15.nucleus:nucleus-support-v4:4.0.0'
+    compile 'info.android15.nucleus:nucleus-support-v7:4.0.0'
+    compile 'frankiesardo:icepick:3.2.0'
+    provided 'frankiesardo:icepick-processor:3.2.0'
+
+    debugCompile project(path: ':network', configuration: 'debug')
+    developCompile project(path: ':network', configuration: 'develop')
+    releaseCompile project(path: ':network', configuration: 'release')
+    //内存溢出检测工具
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    developCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //图片上传
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
 }
