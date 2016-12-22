@@ -216,6 +216,7 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:recyclerview-v7:21.+'
 //    compile "com.android.support:design:${supportLibraryVersion}"
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.umeng.analytics:analytics:latest.integration'
@@ -233,12 +234,16 @@ dependencies {
 //    compile 'com.github.lzyzsd:jsbridge:1.0.4'
 //    compile 'me.grantland:autofittextview:0.2.+'
 
+    //控件绑定
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.google.android:flexbox:0.2.3'
 
     //图片处理
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    //震动监听
+    //震动监听1
 //    compile 'com.squareup:seismic:1.0.2'
     //mvp框架
     compile 'info.android15.nucleus:nucleus-support-v4:4.0.0'

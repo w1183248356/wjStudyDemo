@@ -1,6 +1,5 @@
 package com.wjstudydemo;
 
-import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,8 +7,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.wjstudydemo.util.AppForegroundStateManager;
-
-import java.lang.ref.WeakReference;
 
 import nucleus.presenter.Presenter;
 import nucleus.view.NucleusAppCompatActivity;
@@ -35,7 +32,7 @@ public class BaseNucleusActivity<PresenterType extends Presenter> extends Nucleu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        ((App) getApplicationContext()).addActivity(new WeakReference<Activity>(this));
+//        ((App) getApplicationContext()).addActivity(new WeakReference<>(this));
     }
 
     @Override
