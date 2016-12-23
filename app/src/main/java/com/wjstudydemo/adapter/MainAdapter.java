@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  * @date
  * @since 2016/12/22 15:53
  **/
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> implements View.OnClickListener{
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
     private OnRecyclerViewItemClickListener l;
     private List<StudyNameInfo> list;
 
@@ -59,14 +59,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         return list.size();
     }
 
-    @Override
-    public void onClick(View v) {
-        if(l != null){
-            l.onItemClick(v, v.getTag());
-        }
-    }
-
-
     class ViewHolder extends RecyclerView.ViewHolder{
 
         @Bind(R.id.tv_name)
@@ -75,6 +67,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    l.onItemClick(v, v.getTag());
+                }
+            });
         }
     }
 }

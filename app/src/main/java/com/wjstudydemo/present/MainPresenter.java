@@ -28,32 +28,11 @@ public class MainPresenter extends BasePresenter<MainActivity> {
     @Override
     protected void onTakeView(MainActivity activity) {
         super.onTakeView(activity);
-        String json = "[{\"studyName\":\"动画\",\"studyClassName\":\"\"}]";
+        String json = "[{\"studyName\":\"动画\",\"studyClassName\":\"\"}," +
+                "{\"studyName\":\"RecyclerView使用\",\"studyClassName\":\"com.wjstudydemo.view.RecyclerViewDemoActivity\"}]";
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });
         activity.setAdapterData(list);
     }
 
-//    public void setAdapterData() {
-//
-//        restartableFirst(SET_ADAPTERE_DATA, new Func0<Observable<Object>>() {
-//            @Override
-//            public Observable<Object> call() {
-//                return null;
-//            }
-//        });
-//        restartableFirst(SET_ADAPTERE_DATA, () -> {
-//            String json = "[{\"studyName\":\"动画\",\"studyClassName\":\"\"}]";
-//            List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<StudyNameInfo>() {
-//            });
-//            return list;
-//        }, (view, list) -> {
-//
-//        }, (view, error) -> L.ee(error.toString()));
-//    }
-
-
-    public void setData(int methodId) {
-        start(methodId);
-    }
 }

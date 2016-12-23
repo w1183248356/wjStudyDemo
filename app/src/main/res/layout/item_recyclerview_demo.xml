@@ -5,11 +5,12 @@
               android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/id_num"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
+        android:textColor="@android:color/black"
         android:background="@color/color_gray"
-        android:layout_marginLeft="8dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="1" />
 
 </RelativeLayout>
