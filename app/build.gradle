@@ -217,6 +217,7 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:recyclerview-v7:21.+'
+    compile 'com.android.support:design:25.0.1'
 //    compile "com.android.support:design:${supportLibraryVersion}"
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.umeng.analytics:analytics:latest.integration'

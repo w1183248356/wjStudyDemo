@@ -29,7 +29,8 @@ public class MainPresenter extends BasePresenter<MainActivity> {
     protected void onTakeView(MainActivity activity) {
         super.onTakeView(activity);
         String json = "[{\"studyName\":\"动画\",\"studyClassName\":\"\"}," +
-                "{\"studyName\":\"RecyclerView使用\",\"studyClassName\":\"com.wjstudydemo.view.RecyclerViewDemoActivity\"}]";
+                "{\"studyName\":\"RecyclerView使用\",\"studyClassName\":\"com.wjstudydemo.view.RecyclerViewDemoActivity\"}," +
+                "{\"studyName\":\"DesignSupportLibrary使用\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}]";
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });
         activity.setAdapterData(list);
