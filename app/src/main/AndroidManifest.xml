@@ -12,9 +12,9 @@
             android:name=".view.MainActivity"
             android:theme="@style/AppDemoTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -23,6 +23,13 @@
         <activity
             android:name=".view.DesignSupportLibraryDemoActivity"
             android:theme="@style/DesignDemoTheme" />
+        <activity
+            android:name=".view.AnimationMainDemoActivity"
+            android:theme="@style/AppDemoTheme" />
+        <activity
+            android:name=".view.animation.ASTRSAnimationXMLActivity"
+            android:theme="@style/DesignDemoTheme">
+        </activity>
     </application>
 
 </manifest>

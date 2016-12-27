@@ -267,3 +267,9 @@
 -keep class cn.finalteam.galleryfinal.widget.crop.*{*;}
 -keep class cn.finalteam.galleryfinal.widget.zoonview.*{*;}
 #galleryfinal-----------------------end--------
+
+#工具类开始-----start
+-keep class com.blankj.utilcode.** { *; }
+-keepclassmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**
+#工具类结束----end
