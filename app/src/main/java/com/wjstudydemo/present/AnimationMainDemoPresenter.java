@@ -29,7 +29,7 @@ public class AnimationMainDemoPresenter extends BasePresenter<AnimationMainDemoA
     protected void onTakeView(AnimationMainDemoActivity activity) {
         super.onTakeView(activity);
         String json = "[{\"studyName\":\"alpha、scale、translate、rotate、set的xml属性及用法\",\"studyClassName\":\"com.wjstudydemo.view.animation.ASTRSAnimationXMLActivity\"}," +
-                "{\"studyName\":\"DesignSupportLibrary使用\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}," +
+                "{\"studyName\":\"alpha、scale、translate、rotate、set的代码生成方法\",\"studyClassName\":\"com.wjstudydemo.view.animation.ASTRSAnimationCodeActivity\"}," +
                 "{\"studyName\":\"动画学习\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}]";
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });

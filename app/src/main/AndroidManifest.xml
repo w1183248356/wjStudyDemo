@@ -30,6 +30,10 @@
             android:name=".view.animation.ASTRSAnimationXMLActivity"
             android:theme="@style/DesignDemoTheme">
         </activity>
+        <activity
+            android:name=".view.animation.ASTRSAnimationCodeActivity"
+            android:theme="@style/DesignDemoTheme">
+        </activity>
     </application>
 
 </manifest>

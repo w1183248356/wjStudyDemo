@@ -19,7 +19,7 @@ import nucleus.factory.RequiresPresenter;
 /**
  * @author wangjian
  * @title ASTRSAnimationXMLActivity
- * @description alpha、scale、translate、rotate、set的xml属性及用法
+ * @description alpha、scale、translate、rotate、set 的xml属性及用法
  *                  XML配置文件中
  *                  alpha   渐变透明度动画效果
  *                  scale   渐变尺寸伸缩动画效果
@@ -45,6 +45,20 @@ public class ASTRSAnimationXMLActivity extends BaseNucleusActivity<ASTRSAnimatio
     android:repeatMode	重复类型，有reverse和restart两个值，reverse表示倒序回放，restart表示重新放一遍，
                             必须与repeatCount一起使用才能看到效果。因为这里的意义是重复的类型，即回放时的动作。
     android:interpolator  设定插值器，其实就是指定的动作效果，比如弹跳效果等，不在这小节中讲解，后面会单独列出一单讲解。
+    */
+
+    /*
+    Interpolator插值器
+    使用方法 android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    AccelerateDecelerateInterpolator 在动画开始与介绍的地方速率改变比较慢，在中间的时候加速
+    AccelerateInterpolator 在动画开始的地方速率改变比较慢，然后开始加速
+    AnticipateInterpolator 开始的时候向后然后向前甩
+    AnticipateOvershootInterpolator 开始的时候向后然后向前甩一定值后返回最后的值
+    BounceInterpolator 动画结束的时候弹起
+    CycleInterpolator 动画循环播放特定的次数，速率改变沿着正弦曲线
+    DecelerateInterpolator 在动画开始的地方快然后慢
+    LinearInterpolator 以常量速率改变
+    OvershootInterpolator 向前甩一定值后再回到原来位置
     */
     Animation animation;
 
