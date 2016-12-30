@@ -30,7 +30,11 @@ public class AnimationMainDemoPresenter extends BasePresenter<AnimationMainDemoA
         super.onTakeView(activity);
         String json = "[{\"studyName\":\"alpha、scale、translate、rotate、set的xml属性及用法\",\"studyClassName\":\"com.wjstudydemo.view.animation.ASTRSAnimationXMLActivity\"}," +
                 "{\"studyName\":\"alpha、scale、translate、rotate、set的代码生成方法\",\"studyClassName\":\"com.wjstudydemo.view.animation.ASTRSAnimationCodeActivity\"}," +
-                "{\"studyName\":\"动画学习\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}]";
+                "{\"studyName\":\"ValueAnimator基本使用界面\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo1Activity\"}," +
+                "{\"studyName\":\"ValueAnimator自定义\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo2Activity\"}," +
+                "{\"studyName\":\"ValueAnimator-ObjectAnimator使用\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo3Activity\"}," +
+                "{\"studyName\":\"PropertyValuesHolder与Keyframe 基本使用界面\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo4Activity\"}," +
+                "{\"studyName\":\"联合动画简单实现\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo5Activity\"}]";
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });
         activity.setAdapterData(list);

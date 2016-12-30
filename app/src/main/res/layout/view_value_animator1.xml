@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:text="start anim" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:text="cancel anim" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#ffff00"
+        android:padding="10dp"
+        android:text="Hello qijian" />
+
+    <com.wjstudydemo.util.view.MyPointView1
+        android:id="@+id/pointview"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/tv" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_below="@id/pointview"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/aa"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

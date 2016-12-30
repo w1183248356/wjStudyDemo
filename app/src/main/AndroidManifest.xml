@@ -11,11 +11,11 @@
         <activity
             android:name=".view.MainActivity"
             android:theme="@style/AppDemoTheme">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-            <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".view.RecyclerViewDemoActivity"
@@ -28,11 +28,30 @@
             android:theme="@style/AppDemoTheme" />
         <activity
             android:name=".view.animation.ASTRSAnimationXMLActivity"
-            android:theme="@style/DesignDemoTheme">
-        </activity>
+            android:theme="@style/DesignDemoTheme" />
         <activity
             android:name=".view.animation.ASTRSAnimationCodeActivity"
-            android:theme="@style/DesignDemoTheme">
+            android:theme="@style/DesignDemoTheme" />
+        <activity
+            android:name=".view.animation.ValueAnimatorDemo1Activity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".view.animation.ValueAnimatorDemo2Activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".view.animation.ValueAnimatorDemo3Activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".view.animation.ValueAnimatorDemo4Activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".view.animation.ValueAnimatorDemo5Activity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
