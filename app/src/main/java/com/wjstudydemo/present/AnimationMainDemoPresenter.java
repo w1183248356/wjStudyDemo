@@ -34,7 +34,9 @@ public class AnimationMainDemoPresenter extends BasePresenter<AnimationMainDemoA
                 "{\"studyName\":\"ValueAnimator自定义\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo2Activity\"}," +
                 "{\"studyName\":\"ValueAnimator-ObjectAnimator使用\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo3Activity\"}," +
                 "{\"studyName\":\"PropertyValuesHolder与Keyframe 基本使用界面\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo4Activity\"}," +
-                "{\"studyName\":\"联合动画简单实现\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo5Activity\"}]";
+                "{\"studyName\":\"联合动画简单实现\",\"studyClassName\":\"com.wjstudydemo.view.animation.ValueAnimatorDemo5Activity\"}," +
+                "{\"studyName\":\"利用xml来实现ValueAnimator、ObjectAnimator和AnimatorSet\",\"studyClassName\":\"com.wjstudydemo.view.animation.XML2VOS\"}," +
+                "{\"studyName\":\"简单的时间点击按钮弹出多个按钮\",\"studyClassName\":\"com.wjstudydemo.view.animation.AnimatorDemoActivity\"}]";
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });
         activity.setAdapterData(list);

@@ -46,6 +46,12 @@
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".view.animation.ValueAnimatorDemo5Activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".view.animation.XML2VOS"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".view.animation.AnimatorDemoActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

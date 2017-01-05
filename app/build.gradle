@@ -218,7 +218,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:recyclerview-v7:21.+'
     compile 'com.android.support:design:25.0.1'
-//    compile "com.android.support:design:${supportLibraryVersion}"
+    //    compile "com.android.support:design:${supportLibraryVersion}"
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.umeng.analytics:analytics:latest.integration'
 //    compile 'com.qpwa.app.lib:com-qpwa-app:1.0.6@aar'
@@ -241,7 +241,6 @@ dependencies {
 
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.google.android:flexbox:0.2.3'
-
     //图片处理
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //震动监听1
@@ -251,7 +250,6 @@ dependencies {
     compile 'info.android15.nucleus:nucleus-support-v7:4.0.0'
     compile 'frankiesardo:icepick:3.2.0'
     provided 'frankiesardo:icepick-processor:3.2.0'
-
     debugCompile project(path: ':network', configuration: 'debug')
     developCompile project(path: ':network', configuration: 'develop')
     releaseCompile project(path: ':network', configuration: 'release')
@@ -262,6 +260,6 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     //图片上传
     compile 'cn.finalteam:galleryfinal:1.4.8.7'
-
     compile 'com.blankj:utilcode:1.3.5'
+    compile files('libs/printerlibs.jar')
 }
