@@ -61,17 +61,35 @@
         <activity
             android:name=".view.UserDefinedWidgetActivity"
             android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity
             android:name=".view.userDefinedWidget.DrawDemo1Activity"
             android:theme="@style/AppTheme" />
         <!--自定义控件结束-->
+
+        <!--<materialAnimations源码学习开始-->
+        <activity
+            android:name=".view.MaterialAnimationsActivity"
+            android:theme="@style/MaterialAnimations">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".view.material_animation.TransitionActivity1"
+            android:theme="@style/MaterialAnimations.Red"/>
+
+        <!--<materialAnimations源码学习结束-->
+
     </application>
 
 </manifest>
