@@ -29,6 +29,7 @@ import java.util.List;
 
 /**
  * Helper class for creating content transitions used with {@link android.app.ActivityOptions}.
+ * 就是从DecorView中获取statusBar和navBar，将它们也添加到共享元素数组当中，这样可以提高用户体验。
  */
 public class TransitionHelper {
 
@@ -53,6 +54,8 @@ public class TransitionHelper {
         View navBar = decor.findViewById(android.R.id.navigationBarBackground);
 
         // Create pair of transition participants.
+//        pairs，它是一个元素类型为Pair<View, String>的数组，View代表指定动画的控件，String代表transitionName，
+// 这个名称必须和xml中指定控件的android:transitionName名称一样
         List<Pair> participants = new ArrayList<>(3);
         addNonNullViewToTransitionParticipants(statusBar, participants);
         addNonNullViewToTransitionParticipants(navBar, participants);

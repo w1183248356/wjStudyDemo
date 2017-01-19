@@ -87,7 +87,9 @@
         <activity
             android:name=".view.material_animation.TransitionActivity1"
             android:theme="@style/MaterialAnimations.Red"/>
-
+        <activity
+            android:name=".view.material_animation.TransitionActivity2"
+            android:theme="@style/MaterialAnimations.Red"/>
         <!--<materialAnimations源码学习结束-->
 
     </application>

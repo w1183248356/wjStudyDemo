@@ -1,5 +1,6 @@
 package com.wjstudydemo.view.material_animation;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,6 +29,22 @@ public class TransitionActivity1 extends BaseDetailActivity {
         bindData();
         setupWindowAnimations();
         setupToolbar();
+        setupLayout();
+    }
+
+    public void setupLayout(){
+        findViewById(R.id.sample1_button1).setOnClickListener(v -> {
+            Intent intent = new Intent(TransitionActivity1.this, TransitionActivity2.class);
+            intent.putExtra(EXTRA_SAMPLE, sample);
+            intent.putExtra(EXTRA_TYPE, TYPE_PROGRAMMATICALLY);
+            transitionTo(intent);
+        });
+        findViewById(R.id.sample1_button2).setOnClickListener(v -> {
+            Intent intent = new Intent(TransitionActivity1.this, TransitionActivity2.class);
+            intent.putExtra(EXTRA_SAMPLE, sample);
+            intent.putExtra(EXTRA_TYPE, TYPE_XML);
+            transitionTo(intent);
+        });
     }
 
     private void bindData() {

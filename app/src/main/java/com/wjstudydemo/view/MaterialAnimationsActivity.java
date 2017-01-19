@@ -1,22 +1,24 @@
 package com.wjstudydemo.view;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.view.Gravity;
+import android.view.View;
 
 import com.wjstudydemo.R;
 import com.wjstudydemo.adapter.SamplesRecyclerAdapter;
 import com.wjstudydemo.bean.Sample;
-import com.wjstudydemo.view.material_animation.BaseDetailActivity;
+import com.wjstudydemo.util.TransitionHelper;
 import com.wjstudydemo.view.material_animation.TransitionActivity1;
 
 import java.util.Arrays;
@@ -29,6 +31,18 @@ import java.util.List;
  * @modifier
  * @date
  * @since 2017/1/9 13:48
+ * 共享元素跳转：
+ * 为了使有一个共享元素的两个activities间使用过渡动画：
+ * 1.在你的主题中启用窗口内容过渡
+ * 2.在你的主题样式中指定共享元素的过渡
+ * 3.定义你的过渡动画为XML资源
+ * 4.使用Android:transitionName属性给两个布局中的共享元素指定一个相同的名字（名字一定不要写错）
+ * 5.使用ActivityOptions.makeSceneTransitionAnimation() 方法
+ * 首先在主题里面添加下面属性Style
+ * <item name="android:windowContentTransitions">true</item>
+ * <item name="android:windowAllowEnterTransitionOverlap">false</item>
+ * <item name="android:windowAllowReturnTransitionOverlap">false</item>
+ *
  **/
 public class MaterialAnimationsActivity extends AppCompatActivity {
     private List<Sample> samples;
@@ -82,12 +96,24 @@ public class MaterialAnimationsActivity extends AppCompatActivity {
             switch (viewHolder.getAdapterPosition()) {
                 case 0:
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        Intent intent = new Intent(MaterialAnimationsActivity.this, TransitionActivity1.class);
-                        intent.putExtra(BaseDetailActivity.EXTRA_SAMPLE, samples.get(0));
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                        transitionToActivity(TransitionActivity1.class, samples.get(0));
                     }
                     break;
             }
         });
+    }
+
+    public void transitionToActivity(Class target, Sample sample) {
+        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, true);
+        startActivity(target, pairs, sample);
+    }
+
+    public void startActivity(Class target, Pair<View, String>[] pairs, Sample sample) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            Intent intent = new Intent(this, target);
+            ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pairs);
+            intent.putExtra("sample", sample);
+            this.startActivity(intent, transitionActivityOptions.toBundle());
+        }
     }
 }
