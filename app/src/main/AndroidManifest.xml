@@ -90,6 +90,22 @@
         <activity
             android:name=".view.material_animation.TransitionActivity2"
             android:theme="@style/MaterialAnimations.Red"/>
+        <activity
+            android:name=".view.material_animation.TransitionActivity3"
+            android:theme="@style/MaterialAnimations.Red"/>
+        <activity
+            android:name=".view.material_animation.SharedElementActivity"
+            android:theme="@style/MaterialAnimations.Blue"/>
+        <activity
+            android:name=".view.material_animation.AnimationsActivity1"
+            android:theme="@style/MaterialAnimations.Green"/>
+        <activity
+        android:name=".view.material_animation.AnimationsActivity2"
+        android:theme="@style/MaterialAnimations.Green"/>
+        <activity
+            android:name=".view.material_animation.RevealActivity"
+            android:theme="@style/MaterialAnimations.Yellow"/>
+
         <!--<materialAnimations源码学习结束-->
 
     </application>

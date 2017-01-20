@@ -19,6 +19,9 @@ import com.wjstudydemo.R;
 import com.wjstudydemo.adapter.SamplesRecyclerAdapter;
 import com.wjstudydemo.bean.Sample;
 import com.wjstudydemo.util.TransitionHelper;
+import com.wjstudydemo.view.material_animation.AnimationsActivity1;
+import com.wjstudydemo.view.material_animation.RevealActivity;
+import com.wjstudydemo.view.material_animation.SharedElementActivity;
 import com.wjstudydemo.view.material_animation.TransitionActivity1;
 
 import java.util.Arrays;
@@ -99,12 +102,37 @@ public class MaterialAnimationsActivity extends AppCompatActivity {
                         transitionToActivity(TransitionActivity1.class, samples.get(0));
                     }
                     break;
+                case 1:
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        transitionToActivity(SharedElementActivity.class, viewHolder, samples.get(1));
+                    }
+                    break;
+                case 2:
+                    transitionToActivity(AnimationsActivity1.class, samples.get(2));
+                    break;
+                case 3:
+                    transitionToActivity(RevealActivity.class, viewHolder, samples.get(3), R.string.transition_reveal1);
+                    break;
             }
         });
     }
 
     public void transitionToActivity(Class target, Sample sample) {
         final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, true);
+        startActivity(target, pairs, sample);
+    }
+
+    private void transitionToActivity(Class target, SamplesRecyclerAdapter.SamplesViewHolder viewHolder, Sample sample) {
+        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, false,
+                new Pair<>(viewHolder.binding.sampleIcon, getString(R.string.square_blue_name)),
+                new Pair<>(viewHolder.binding.sampleName, getString(R.string.sample_blue_title)));
+//        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, true);
+        startActivity(target, pairs, sample);
+    }
+
+    private void transitionToActivity(Class target, SamplesRecyclerAdapter.SamplesViewHolder viewHolder, Sample sample, int transitionName) {
+        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, false,
+                new Pair<View, String>(viewHolder.binding.sampleIcon, getString(transitionName)));
         startActivity(target, pairs, sample);
     }
 

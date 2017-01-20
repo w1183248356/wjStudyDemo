@@ -81,7 +81,7 @@ public class SamplesRecyclerAdapter extends RecyclerView.Adapter<SamplesRecycler
 
 
     public class SamplesViewHolder extends RecyclerView.ViewHolder {
-        final ItemRowSampleBinding binding;
+        final public ItemRowSampleBinding binding;
 
         public SamplesViewHolder(View rootView) {
             super(rootView);
