@@ -91,7 +91,20 @@ public class AnimationsActivity2 extends BaseDetailActivity {
         ViewGroup activityRoot = (ViewGroup) findViewById(R.id.buttons_group);
         ViewGroup sceneRoot = (ViewGroup) findViewById(R.id.scene_root);
 
+//        Android Scene保存了view层级的状态，并保存了层级中所有view的属性值。
+// 动画框架能使用动画进行场景的切换，一般只需要制定exit(退出)动画，不需要制定enter（进入）动画，
+// 系统会自动帮我们创建进入动画。
+
+//        用Layout创建一个场景
+//        用layout创建Scene时，一般这个layout是不变的，只有在layout创建的时候才会加载场景。
+// 如果你要改变这个layout的话，需要重新创建Scene。不能用layout的一部分来创建Scene。
+// 用layout创建Scene时需要吧Layout当做ViewGroup初始化，然后调用Scene.getSceneForLayout() 。
         scene0 = Scene.getSceneForLayout(sceneRoot, R.layout.activity_animations_scene0, this);
+//        场景动作在下边这些情况下用处比较大:
+//        1、需要加动画的view，他们不在同一个view层级中，这样就可以操作每个的view进行入场和出场动画。
+//        2、为那些没有自带动画效果的view加效果， 例如ListView中的子view，详情参考Limitations。
+//        为了保证动画的性能问题，要把他们放到线程里，然后调用 Scene.setExitAction() 或者 Scene.setEnterAction()。
+//        Framework 会在场景动画开始前调用setExitAction()，场景动画结束后调用 setEnterAction()。
         scene0.setEnterAction(this::setViewsToAnimate);
         scene0.setExitAction(new Runnable() {
             @Override
@@ -113,6 +126,33 @@ public class AnimationsActivity2 extends BaseDetailActivity {
         View button3 = findViewById(R.id.sample3_button3);
         View button4 = findViewById(R.id.sample3_button4);
 
+        /*
+        Transition类型
+        AutoTransition：xml中配置<autoTransition/>，默认变化. 淡入淡出,移动 、重计算大小， views, in that order.
+        Fade：xml中配置<fade/>android:fadingMode="[fade_in |fade_out |fade_in_out]"/>,淡入淡出
+        ChangeBounds：<changeBounds/>移动并改变大小
+        一、xml创建一个Transition：
+        1、工程中创建 res/transition/ 目录.
+        2、创建xml资源文件
+        3、加入Transition节点
+        res/transition/fade_transition.xml
+        <fade xmlns:android="http://schemas.android.com/apk/res/android" />
+        然后java代码中载入xml资源
+        Transition mFadeTransition =
+        TransitionInflater.from(this).
+        inflateTransition(R.transition.fade_transition);
+        二、代码中创建Transition
+        Transition mFadeTransition = new Fade();
+        场景和Transition都已经创建好了，那么该怎么触发他们呢。
+        TransitionManager.go(mEndingScene, mFadeTransition);
+        如果要融合多种变化的话可以用set来存放他们例如AutoTransiton
+        <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+            android:transitionOrdering="sequential">
+            <fade android:fadingMode="fade_out" />
+            <changeBounds />
+            <fade android:fadingMode="fade_in" />
+        </transitionSet>
+         */
         button1.setOnClickListener(v -> {
             TransitionManager.go(scene1, new ChangeBounds());
         });
