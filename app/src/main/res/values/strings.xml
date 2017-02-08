@@ -22,4 +22,13 @@
     <string name="reveal_body3">View layout change animation with Circular Reveal Animation on finish</string>
     <string name="reveal_body4">Circular Reveal Animation from top with nested animations on end</string>
     <!--materialAnimation源码 结束-->
+
+    <!--<LookLook源码开始-->
+    <string name="zhihu" translatable="false">知乎日报</string>
+    <string name="topnews" translatable="false">网易头条</string>
+    <string name="meizi" translatable="false">每日看看</string>
+
+    <string name="filter" translatable="false">打开</string>
+    <string name="about" translatable="false">关于</string>
+    <!--<LookLook源码结束-->
 </resources>

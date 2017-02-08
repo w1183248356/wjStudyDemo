@@ -92,6 +92,11 @@
             android:name=".view.material_animation.RevealActivity"
             android:theme="@style/MaterialAnimations.Yellow" />
 
+        <activity
+            android:name=".view.looklook.LookLookMainActivity"
+            android:theme="@style/Look.Home" />
+
+
         <!--<materialAnimations源码学习结束-->
 
     </application>

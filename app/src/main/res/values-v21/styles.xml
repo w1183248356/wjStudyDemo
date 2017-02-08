@@ -1,64 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-        <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
-                <item name="android:colorPrimary">@color/material_animations_primary</item>
-                <item name="android:colorPrimaryDark">@color/material_animations_primary_dark</item>
-                <item name="android:colorAccent">@color/material_animations_accent</item>
-                <item name="android:textColorPrimary">@android:color/black</item>
-                <item name="android:textColorPrimaryInverse">@color/text_light</item>
-                <item name="android:statusBarColor">@color/material_animations_primary_dark</item>
-                <item name="android:textColor">@color/text_dark</item>
-                <item name="android:windowContentTransitions">true</item>
-                <item name="android:windowAllowEnterTransitionOverlap">false</item>
-                <item name="android:windowAllowReturnTransitionOverlap">false</item>
-                <item name="android:titleTextAppearance">@style/MaterialAnimations.TextAppearance.Title
-                </item>
-                <item name="android:windowBackground">@color/light_grey</item>
-        </style>
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/material_animations_primary</item>
+        <item name="android:colorPrimaryDark">@color/material_animations_primary_dark</item>
+        <item name="android:colorAccent">@color/material_animations_accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/text_light</item>
+        <item name="android:statusBarColor">@color/material_animations_primary_dark</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+        <item name="android:titleTextAppearance">@style/MaterialAnimations.TextAppearance.Title
+        </item>
+        <item name="android:windowBackground">@color/light_grey</item>
+    </style>
 
-        <style name="MaterialAnimations.Red" parent="MaterialAnimations">
-                <item name="android:colorPrimary">@color/theme_red_primary</item>
-                <item name="android:colorPrimaryDark">@color/theme_red_primary</item>
-                <item name="android:textColorPrimary">@color/theme_red_text</item>
-                <item name="android:statusBarColor">@color/theme_red_primary_dark</item>
-                <item name="android:windowBackground">@color/theme_red_background</item>
-                <item name="android:colorAccent">@color/theme_red_accent</item>
-        </style>
+    <style name="MaterialAnimations.Red" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_red_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_red_primary</item>
+        <item name="android:textColorPrimary">@color/theme_red_text</item>
+        <item name="android:statusBarColor">@color/theme_red_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_red_background</item>
+        <item name="android:colorAccent">@color/theme_red_accent</item>
+    </style>
 
-        <style name="MaterialAnimations.Blue" parent="MaterialAnimations">
-                <item name="android:colorPrimary">@color/theme_blue_primary</item>
-                <item name="android:colorPrimaryDark">@color/theme_blue_primary_dark</item>
-                <item name="android:textColorPrimary">@color/theme_blue_text</item>
-                <item name="android:textColorPrimaryInverse">@color/theme_blue_text_inverse</item>
-                <item name="android:statusBarColor">@color/theme_blue_primary_dark</item>
-                <item name="android:windowBackground">@color/theme_blue_background</item>
-                <item name="android:colorAccent">@color/theme_blue_accent</item>
-        </style>
+    <style name="MaterialAnimations.Blue" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_blue_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_blue_primary_dark</item>
+        <item name="android:textColorPrimary">@color/theme_blue_text</item>
+        <item name="android:textColorPrimaryInverse">@color/theme_blue_text_inverse</item>
+        <item name="android:statusBarColor">@color/theme_blue_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_blue_background</item>
+        <item name="android:colorAccent">@color/theme_blue_accent</item>
+    </style>
 
-        <style name="MaterialAnimations.Green" parent="MaterialAnimations">
-                <item name="android:colorPrimary">@color/theme_green_primary</item>
-                <item name="android:colorPrimaryDark">@color/theme_green_primary</item>
-                <item name="android:textColorPrimary">@color/theme_green_text</item>
-                <item name="android:statusBarColor">@color/theme_green_primary_dark</item>
-                <item name="android:windowBackground">@color/theme_green_background</item>
-                <item name="android:colorAccent">@color/theme_green_accent</item>
-        </style>
+    <style name="MaterialAnimations.Green" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_green_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_green_primary</item>
+        <item name="android:textColorPrimary">@color/theme_green_text</item>
+        <item name="android:statusBarColor">@color/theme_green_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_green_background</item>
+        <item name="android:colorAccent">@color/theme_green_accent</item>
+    </style>
 
-        <style name="MaterialAnimations.Yellow" parent="MaterialAnimations">
-                <item name="android:colorPrimary">@color/theme_yellow_primary</item>
-                <item name="android:colorPrimaryDark">@color/theme_yellow_primary</item>
-                <item name="android:textColorPrimary">@color/theme_yellow_text</item>
-                <item name="android:statusBarColor">@color/theme_yellow_primary_dark</item>
-                <item name="android:windowBackground">@color/theme_yellow_background</item>
-                <item name="android:colorAccent">@color/theme_yellow_accent</item>
-        </style>
+    <style name="MaterialAnimations.Yellow" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_yellow_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_yellow_primary</item>
+        <item name="android:textColorPrimary">@color/theme_yellow_text</item>
+        <item name="android:statusBarColor">@color/theme_yellow_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_yellow_background</item>
+        <item name="android:colorAccent">@color/theme_yellow_accent</item>
+    </style>
 
-        <style name="MaterialAnimations.TextAppearance.Title" parent="android:TextAppearance.Material.Title">
-                <item name="android:textColor">?android:textColorPrimary</item>
-        </style>
+    <style name="MaterialAnimations.TextAppearance.Title" parent="android:TextAppearance.Material.Title">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
 
-        <style name="MaterialAnimations.TextAppearance.Title.Inverse" parent="android:TextAppearance.Material.Title">
-                <item name="android:textColor">?android:textColorPrimaryInverse</item>
-        </style>
+    <style name="MaterialAnimations.TextAppearance.Title.Inverse" parent="android:TextAppearance.Material.Title">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <!--looklook源码开始-->
+    <style name="Look" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/background_super_dark</item>
+        <!--标题颜色-->
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <!--看着像是滚动条，inputText的颜色-->
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:navigationBarColor">@color/primary_super_dark</item>
+        <!--<item name="android:textColorHint">@color/hint_disabled_dark</item>-->
+        <!--<item name="android:windowBackground">@color/background_light</item>-->
+        <!--Material界面进入退出效果-->
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementsUseOverlay">false</item>
+    </style>
+
+    <style name="Look.Home">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/immersive_bars</item>
+        <item name="android:navigationBarColor">@color/immersive_bars</item>
+        <!--<item name="android:windowActionBarOverlay">true</item>-->
+        <!--<item name="android:windowActionModeOverlay">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:windowBackground">@color/background_light</item>
+        <!--<item name="android:windowEnterTransition">@transition/home_enter</item>-->
+    </style>
+    <!--looklook源码结束-->
 </resources>

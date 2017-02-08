@@ -94,4 +94,8 @@
         <item name="android:scaleX">0</item>
         <item name="android:scaleY">0</item>
     </style>
+
+    <!--looklook源码开始-->
+
+    <!--looklook源码结束-->
 </resources>
