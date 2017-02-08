@@ -10,7 +10,7 @@ import com.wjstudydemo.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -61,7 +61,7 @@ public class RecyclerViewDemoAdapter extends RecyclerView.Adapter<RecyclerViewDe
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        @Bind(R.id.id_num)
+        @BindView(R.id.id_num)
         TextView tvName;
 
         public ViewHolder(View itemView) {

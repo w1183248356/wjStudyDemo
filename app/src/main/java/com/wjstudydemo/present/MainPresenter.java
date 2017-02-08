@@ -33,7 +33,8 @@ public class MainPresenter extends BasePresenter<MainActivity> {
                 "{\"studyName\":\"动画学习\",\"studyClassName\":\"com.wjstudydemo.view.AnimationMainDemoActivity\"}," +
                 "{\"studyName\":\"自定义控件学习\",\"studyClassName\":\"com.wjstudydemo.view.UserDefinedWidgetActivity\"}" +
                 (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP ?
-                        ",{\"studyName\":\"MaterialAnimationsActivity源码\",\"studyClassName\":\"com.wjstudydemo.view.MaterialAnimationsActivity\"}]" : "]");
+                        ",{\"studyName\":\"MaterialAnimationsActivity源码\",\"studyClassName\":\"com.wjstudydemo.view.MaterialAnimationsActivity\"}"+
+                               ",{\"studyName\":\"LookLook源码\",\"studyClassName\":\"com.wjstudydemo.view.looklook.LookLookMainActivity\"}]" : "]");
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
         });
         activity.setAdapterData(list);

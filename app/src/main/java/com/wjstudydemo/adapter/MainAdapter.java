@@ -12,7 +12,7 @@ import com.wjstudydemo.interfaces.OnRecyclerViewItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -61,7 +61,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        @Bind(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView tvName;
 
         public ViewHolder(View itemView) {

@@ -18,7 +18,7 @@ import com.wjstudydemo.util.LayoutTop;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import nucleus.factory.RequiresPresenter;
 
@@ -32,7 +32,7 @@ import nucleus.factory.RequiresPresenter;
  **/
 @RequiresPresenter(MainPresenter.class)
 public class MainActivity extends BaseNucleusActivity<MainPresenter> {
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView vRecyclerView;
 
     private MainAdapter mAdapter;

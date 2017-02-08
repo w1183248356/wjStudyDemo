@@ -11,7 +11,7 @@ import com.wjstudydemo.BaseNucleusActivity;
 import com.wjstudydemo.R;
 import com.wjstudydemo.present.DesignSupportLibraryDemoPresenter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import nucleus.factory.RequiresPresenter;
 
@@ -25,11 +25,11 @@ import nucleus.factory.RequiresPresenter;
  **/
 @RequiresPresenter(DesignSupportLibraryDemoPresenter.class)
 public class DesignSupportLibraryDemoActivity extends BaseNucleusActivity<DesignSupportLibraryDemoPresenter>{
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton vFab;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar vToolbar;
-    @Bind(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout vTabLayout;
 
     @Override

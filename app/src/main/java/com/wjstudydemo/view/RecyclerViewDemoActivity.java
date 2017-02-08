@@ -18,7 +18,7 @@ import com.wjstudydemo.util.LayoutTop;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nucleus.factory.RequiresPresenter;
@@ -38,11 +38,11 @@ public class RecyclerViewDemoActivity extends BaseNucleusActivity<RecyclerViewPr
     private static final int GridLayout = 1;
     private static final int StaggerenGridLayout = 2;
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView vRecyclerView;
-    @Bind(R.id.tv_add)
+    @BindView(R.id.tv_add)
     TextView tvAdd;
-    @Bind(R.id.tv_sub)
+    @BindView(R.id.tv_sub)
     TextView tvSub;
 
     private int type = 0;

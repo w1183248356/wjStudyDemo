@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.wjstudydemo.BaseNucleusActivity;
 import com.wjstudydemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,9 +29,9 @@ import butterknife.OnClick;
  * @since 2016/12/28 9:09
  **/
 public class ASTRSAnimationCodeActivity extends BaseNucleusActivity {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar vToolbar;
-    @Bind(R.id.tv)
+    @BindView(R.id.tv)
     TextView vTv;
 
     Animation animation;

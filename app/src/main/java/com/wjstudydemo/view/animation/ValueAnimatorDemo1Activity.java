@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.wjstudydemo.BaseNucleusActivity;
 import com.wjstudydemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -26,7 +26,7 @@ import static com.wjstudydemo.R.id.tv;
  * @since 2016/12/28 14:45
  **/
 public class ValueAnimatorDemo1Activity extends BaseNucleusActivity {
-    @Bind(tv)
+    @BindView(tv)
     TextView vTv;
 
     /*

@@ -11,7 +11,7 @@ import com.wjstudydemo.BaseNucleusActivity;
 import com.wjstudydemo.R;
 import com.wjstudydemo.present.animation.ASTRSAnimationXMLPresenter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nucleus.factory.RequiresPresenter;
@@ -31,9 +31,9 @@ import nucleus.factory.RequiresPresenter;
  **/
 @RequiresPresenter(ASTRSAnimationXMLPresenter.class)
 public class ASTRSAnimationXMLActivity extends BaseNucleusActivity<ASTRSAnimationXMLPresenter> {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar vToolbar;
-    @Bind(R.id.tv)
+    @BindView(R.id.tv)
     TextView vTv;
     /*
     通用属性
