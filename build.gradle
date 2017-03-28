@@ -23,6 +23,10 @@ allprojects {
         maven { url "https://clojars.org/repo/" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "http://117.121.49.158:8081/nexus/content/repositories/thirdparty/" }
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url "$rootDir/node_modules/react-native/android"
+        }
     }
 }
 
@@ -41,7 +45,7 @@ ext {
     supportLibraryVersion = '24.1.1'
     /*buildToolsVersion = '23.0.3'
     supportLibraryVersion = '23.2.1'*/
-    minSdkVersion = 15
+    minSdkVersion = 16
     targetSdkVersion = 25//25有可能会出现找不到第三方.so文件的情况
     //versionCode = 46
     versionCode = 58//用于普通更新

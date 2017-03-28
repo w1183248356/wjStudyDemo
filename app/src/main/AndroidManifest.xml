@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wjstudydemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    /**设置调试 的权限**/
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -93,6 +98,21 @@
             android:theme="@style/MaterialAnimations.Yellow" />
 
         <!--<materialAnimations源码学习结束-->
+
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+        <activity
+            android:name=".view.MyReactActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".view.ReactNativeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     </application>
 

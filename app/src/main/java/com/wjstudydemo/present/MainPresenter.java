@@ -31,7 +31,8 @@ public class MainPresenter extends BasePresenter<MainActivity> {
         String json = "[{\"studyName\":\"RecyclerView使用\",\"studyClassName\":\"com.wjstudydemo.view.RecyclerViewDemoActivity\"}," +
                 "{\"studyName\":\"DesignSupportLibrary使用\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}," +
                 "{\"studyName\":\"动画学习\",\"studyClassName\":\"com.wjstudydemo.view.AnimationMainDemoActivity\"}," +
-                "{\"studyName\":\"自定义控件学习\",\"studyClassName\":\"com.wjstudydemo.view.UserDefinedWidgetActivity\"}" +
+                "{\"studyName\":\"自定义控件学习\",\"studyClassName\":\"com.wjstudydemo.view.UserDefinedWidgetActivity\"}," +
+                "{\"studyName\":\"react学习\",\"studyClassName\":\"com.wjstudydemo.view.ReactNativeActivity\"}" +
                 (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP ?
                         ",{\"studyName\":\"MaterialAnimationsActivity源码\",\"studyClassName\":\"com.wjstudydemo.view.MaterialAnimationsActivity\"}]" : "]");
         List<StudyNameInfo> list = JSONUtils.fromJsonArray(json, new TypeToken<List<StudyNameInfo>>() {
