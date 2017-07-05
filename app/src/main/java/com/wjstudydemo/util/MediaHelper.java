@@ -165,8 +165,20 @@ public class MediaHelper {
 
     public void play() {
         if (!initPlayer())
-            return;
 
+
+        try {
+            mPlayer.setDataSource(mMediaFile.getAbsolutePath());
+            mPlayer.prepare();
+            mPlayer.start();
+            startTimer();
+        } catch (IOException e) {
+            e.printStackTrace();
+            stopTimer();
+        }
+    }
+
+    public void play(String path){
         try {
             mPlayer.setDataSource(mMediaFile.getAbsolutePath());
             mPlayer.prepare();
