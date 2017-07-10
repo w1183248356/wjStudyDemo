@@ -11,11 +11,11 @@
         <activity
             android:name=".view.MainActivity"
             android:theme="@style/AppDemoTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".view.RecyclerViewDemoActivity"
@@ -60,7 +60,7 @@
         <!--自定义控件开始-->
         <activity
             android:name=".view.UserDefinedWidgetActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".view.userDefinedWidget.DrawDemo1Activity"
             android:theme="@style/AppTheme" />
@@ -93,6 +93,19 @@
             android:theme="@style/MaterialAnimations.Yellow" />
 
         <!--<materialAnimations源码学习结束-->
+
+        <activity
+            android:name=".view.customview.CustomViewMainActivity"
+            android:theme="@style/MaterialAnimations.Yellow" />
+        <activity
+            android:name=".view.customview.SignActivity"
+            android:theme="@style/MaterialAnimations.Yellow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
