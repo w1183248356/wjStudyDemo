@@ -18,6 +18,12 @@
         <attr name="rectColor" format="color"/>
         <!--字体颜色颜色-->
         <attr name="textColor" format="color"/>
+        <!--每次改变的大小-->
+        <attr name="changeNum" format="integer"/>
+        <!--最小值-->
+        <attr name="minNum" format="integer"/>
+        <!--最大值-->
+        <attr name="maxNum" format="integer"/>
 
 
     </declare-styleable>

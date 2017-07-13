@@ -38,6 +38,9 @@ public class NumView extends View {
     private int mTextLength;//默认可以显示文字个数
     private int mNum;//默认显示文字
     private int mRectColor;//方框颜色
+    private int mChangeNum;//点击改变的大小
+    private int mMinNum;//最小数字
+    private int mMaxNum;//最大数字
 
 
     private int mTextWidth;//文字宽度
@@ -77,10 +80,14 @@ public class NumView extends View {
         mTextLength = typedArray.getInt(R.styleable.numview_textLength, 6);
         mTextSize = typedArray.getInt(R.styleable.numview_textSize, 60);
         mTextColor = typedArray.getColor(R.styleable.numview_textColor, Color.BLACK);
-        mNum = typedArray.getInt(R.styleable.numview_num, 1);
+        mNum = typedArray.getInt(R.styleable.numview_num, 0);
+        mChangeNum = typedArray.getInt(R.styleable.numview_maxNum, 1);
+        mMaxNum = typedArray.getInt(R.styleable.numview_maxNum, 99999);
+        mMinNum = typedArray.getInt(R.styleable.numview_maxNum, 0);
         mRound = typedArray.getInt(R.styleable.numview_round, 5);
         mRectLength = typedArray.getInt(R.styleable.numview_rectLength, 80);
         mRectColor = typedArray.getColor(R.styleable.numview_rectColor, Color.BLACK);
+
 
         //文字画笔
         mTextPaint = new TextPaint();
@@ -228,10 +235,26 @@ public class NumView extends View {
                 int yUp = (int) event.getY();
                 boolean isInMoreUp = isRightPosition(xUp, yUp);
                 if (isInMoreUp && isPointToPosition) {
-                    if (isAddOrSub) {
-                        l.onAdd(mNum);
+                    if (l == null) {
+                        if (isAddOrSub) {
+                            if (mNum <= mMaxNum - mChangeNum) {
+                                mNum += mChangeNum;
+                            } else {
+                                mNum = mMaxNum;
+                            }
+                        } else {
+                            if (mNum > mMinNum + mChangeNum) {
+                                mNum -= mChangeNum;
+                            } else {
+                                mNum = mMinNum;
+                            }
+                        }
                     } else {
-                        l.onSub(mNum);
+                        if (isAddOrSub) {
+                            l.onAdd(mNum);
+                        } else {
+                            l.onSub(mNum);
+                        }
                     }
                 } else {
                     return super.onTouchEvent(event);
@@ -241,6 +264,22 @@ public class NumView extends View {
         return true;
     }
 
+    /**
+     * 获得数字
+     *
+     * @return
+     */
+    public int getNum() {
+        return mNum;
+    }
+
+    /**
+     * 是否点击到 + -号
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean isRightPosition(int x, int y) {
         isPointToPosition = false;
         if (mSubBounds == null) {
