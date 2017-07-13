@@ -39,24 +39,7 @@ public class SignActivity extends BaseDetailActivity {
 
         ImageView div = (ImageView) findViewById(R.id.dragImageView);
         NumView nv = (NumView) findViewById(R.id.mNum);
-        nv.setOnAddOrSubListener(new NumView.OnAddOrSubListener(){
 
-            @Override
-            public void onAdd(int num) {
-                if(num < 99999){
-                    num ++;
-                }
-                nv.setNum(num);
-            }
-
-            @Override
-            public void onSub(int num) {
-                if(num > 0){
-                    num --;
-                }
-                nv.setNum(num);
-            }
-        });
 
     }
 }

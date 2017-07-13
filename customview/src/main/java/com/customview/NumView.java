@@ -81,9 +81,9 @@ public class NumView extends View {
         mTextSize = typedArray.getInt(R.styleable.numview_textSize, 60);
         mTextColor = typedArray.getColor(R.styleable.numview_textColor, Color.BLACK);
         mNum = typedArray.getInt(R.styleable.numview_num, 0);
-        mChangeNum = typedArray.getInt(R.styleable.numview_maxNum, 1);
+        mChangeNum = typedArray.getInt(R.styleable.numview_changeNum, 1);
         mMaxNum = typedArray.getInt(R.styleable.numview_maxNum, 99999);
-        mMinNum = typedArray.getInt(R.styleable.numview_maxNum, 0);
+        mMinNum = typedArray.getInt(R.styleable.numview_minNum, 0);
         mRound = typedArray.getInt(R.styleable.numview_round, 5);
         mRectLength = typedArray.getInt(R.styleable.numview_rectLength, 80);
         mRectColor = typedArray.getColor(R.styleable.numview_rectColor, Color.BLACK);
@@ -256,6 +256,7 @@ public class NumView extends View {
                             l.onSub(mNum);
                         }
                     }
+                    invalidate();
                 } else {
                     return super.onTouchEvent(event);
                 }
