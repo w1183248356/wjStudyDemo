@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--时间轴-->
+    <declare-styleable name="numview">
+        <!--矩形边长-->
+        <attr name="rectLength" format="integer"/>
+        <!--文字大小-->
+        <attr name="textSize" format="integer"/>
+        <!--矩形中加减号与边框距离-->
+        <attr name="intervalLength" format="integer"/>
+        <!--默认文字个数-->
+        <attr name="textLength" format="integer"/>
+        <!--显示的文字-->
+        <attr name="num" format="integer"/>
+        <!--方框圆角-->
+        <attr name="round" format="integer"/>
+        <!--方框颜色颜色-->
+        <attr name="rectColor" format="color"/>
+        <!--字体颜色颜色-->
+        <attr name="textColor" format="color"/>
+
+
+    </declare-styleable>
+</resources>

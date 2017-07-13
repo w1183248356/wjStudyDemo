@@ -31,6 +31,7 @@ public class MainPresenter extends BasePresenter<MainActivity> {
         String json = "[{\"studyName\":\"RecyclerView使用\",\"studyClassName\":\"com.wjstudydemo.view.RecyclerViewDemoActivity\"}," +
                 "{\"studyName\":\"DesignSupportLibrary使用\",\"studyClassName\":\"com.wjstudydemo.view.DesignSupportLibraryDemoActivity\"}," +
                 "{\"studyName\":\"动画学习\",\"studyClassName\":\"com.wjstudydemo.view.AnimationMainDemoActivity\"}," +
+                "{\"studyName\":\"VPN\",\"studyClassName\":\"com.wjstudydemo.view.TestSVSDKLib\"}," +
                 "{\"studyName\":\"自定义控件学习\",\"studyClassName\":\"com.wjstudydemo.view.UserDefinedWidgetActivity\"}" +
                 (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP ?
                         ",{\"studyName\":\"MaterialAnimationsActivity源码\",\"studyClassName\":\"com.wjstudydemo.view.MaterialAnimationsActivity\"}]" : "]");

@@ -45,7 +45,6 @@ import java.util.List;
  * <item name="android:windowContentTransitions">true</item>
  * <item name="android:windowAllowEnterTransitionOverlap">false</item>
  * <item name="android:windowAllowReturnTransitionOverlap">false</item>
- *
  **/
 public class MaterialAnimationsActivity extends AppCompatActivity {
     private List<Sample> samples;
@@ -103,9 +102,7 @@ public class MaterialAnimationsActivity extends AppCompatActivity {
                     }
                     break;
                 case 1:
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        transitionToActivity(SharedElementActivity.class, viewHolder, samples.get(1));
-                    }
+                    transitionToActivity(SharedElementActivity.class, viewHolder, samples.get(1));
                     break;
                 case 2:
                     transitionToActivity(AnimationsActivity1.class, samples.get(2));

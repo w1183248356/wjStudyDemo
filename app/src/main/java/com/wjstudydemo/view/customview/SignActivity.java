@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.customview.BreakLineView;
+import com.customview.NumView;
 import com.customview.SignView;
 import com.wjstudydemo.R;
 import com.wjstudydemo.view.material_animation.BaseDetailActivity;
@@ -37,5 +38,25 @@ public class SignActivity extends BaseDetailActivity {
         bv.startAnim();
 
         ImageView div = (ImageView) findViewById(R.id.dragImageView);
+        NumView nv = (NumView) findViewById(R.id.mNum);
+        nv.setOnAddOrSubListener(new NumView.OnAddOrSubListener(){
+
+            @Override
+            public void onAdd(int num) {
+                if(num < 99999){
+                    num ++;
+                }
+                nv.setNum(num);
+            }
+
+            @Override
+            public void onSub(int num) {
+                if(num > 0){
+                    num --;
+                }
+                nv.setNum(num);
+            }
+        });
+
     }
 }
