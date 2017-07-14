@@ -24,6 +24,8 @@
         <attr name="minNum" format="integer"/>
         <!--最大值-->
         <attr name="maxNum" format="integer"/>
+        <!--是否打开动画-->
+        <attr name="isStartAnima" format="boolean"/>
 
 
     </declare-styleable>

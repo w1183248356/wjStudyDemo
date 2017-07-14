@@ -1,5 +1,6 @@
 package com.customview;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -24,6 +25,7 @@ import android.view.View;
  **/
 public class NumView extends View {
     private static final String TAG = "SimpleProcessView";
+    private static final int SCALE_ANIMATOR_DURATION = 200;
 
 
     private int mWidth;
@@ -41,6 +43,7 @@ public class NumView extends View {
     private int mChangeNum;//点击改变的大小
     private int mMinNum;//最小数字
     private int mMaxNum;//最大数字
+    private boolean isStartAnima;
 
 
     private int mTextWidth;//文字宽度
@@ -59,6 +62,7 @@ public class NumView extends View {
 
     //点击事件
     private OnAddOrSubListener l;
+    private ScaleAnimator mScaleAnimator;
 
     public NumView(Context context) {
         this(context, null);
@@ -87,6 +91,8 @@ public class NumView extends View {
         mRound = typedArray.getInt(R.styleable.numview_round, 5);
         mRectLength = typedArray.getInt(R.styleable.numview_rectLength, 80);
         mRectColor = typedArray.getColor(R.styleable.numview_rectColor, Color.BLACK);
+        isStartAnima = typedArray.getBoolean(R.styleable.numview_isStartAnima, true);
+
 
 
         //文字画笔
@@ -120,6 +126,9 @@ public class NumView extends View {
      */
     public void setNum(int num) {
         mNum = num;
+        if(isStartAnima){
+            startScaleAnimator();
+        }
         invalidate();
     }
 
@@ -130,6 +139,15 @@ public class NumView extends View {
      */
     public void setOnAddOrSubListener(OnAddOrSubListener l) {
         this.l = l;
+    }
+
+    /**
+     * 获得数字
+     *
+     * @return
+     */
+    public int getNum() {
+        return mNum;
     }
 
     @Override
@@ -249,6 +267,10 @@ public class NumView extends View {
                                 mNum = mMinNum;
                             }
                         }
+                        if(isStartAnima) {
+                            startScaleAnimator();
+                        }
+                        invalidate();
                     } else {
                         if (isAddOrSub) {
                             l.onAdd(mNum);
@@ -256,22 +278,12 @@ public class NumView extends View {
                             l.onSub(mNum);
                         }
                     }
-                    invalidate();
                 } else {
                     return super.onTouchEvent(event);
                 }
                 break;
         }
         return true;
-    }
-
-    /**
-     * 获得数字
-     *
-     * @return
-     */
-    public int getNum() {
-        return mNum;
     }
 
     /**
@@ -314,7 +326,52 @@ public class NumView extends View {
                 && y >= rect.top && y <= rect.bottom;
     }
 
+    public void startScaleAnimator(){
+        cancelScaleAnimator();
+        mScaleAnimator = new ScaleAnimator(mTextSize, 120);
+        mScaleAnimator.start();
+    }
 
+    public void cancelScaleAnimator(){
+        if(mScaleAnimator != null){
+            mScaleAnimator.cancel();
+            mScaleAnimator = null;
+        }
+    }
+
+    private class ScaleAnimator extends ValueAnimator implements ValueAnimator.AnimatorUpdateListener{
+
+        /**
+         * 构建一个缩放动画
+         * <p>
+         * 从一个矩阵变换到另外一个矩阵
+         *
+         * @param smallSize 小字
+         * @param bigSize   大字
+         */
+        public ScaleAnimator(int smallSize, int bigSize) {
+            this(smallSize, bigSize, SCALE_ANIMATOR_DURATION);
+        }
+
+        public ScaleAnimator(int smallSize, int bigSize, long duration){
+            super();
+            setFloatValues(bigSize, smallSize);
+            setDuration(duration);
+            addUpdateListener(this);
+        }
+
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            float value = (float) animation.getAnimatedValue();
+            mTextPaint.setTextSize(value);
+            invalidate();
+        }
+    }
+
+
+    /**
+     * 加减号设置监听 如何不设置用默认的
+     */
     public interface OnAddOrSubListener {
         void onAdd(int num);
 

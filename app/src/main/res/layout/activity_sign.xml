@@ -40,10 +40,6 @@
         android:id="@+id/mNum"
         android:layout_width="match_parent"
         android:padding="8dp"
-        app:num="3"
-        app:changeNum="5"
-        app:minNum="2"
-        app:maxNum="10"
         android:layout_height="match_parent">
         <!--app:intervalLength="60"-->
         <!--app:textLength="5"-->
