@@ -80,18 +80,18 @@ public class NumView extends View {
     public void initAtts(Context context, @Nullable AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.numview);
 
-        mIntervalLength = typedArray.getInt(R.styleable.numview_intervalLength, 12);
-        mTextLength = typedArray.getInt(R.styleable.numview_textLength, 6);
-        mTextSize = typedArray.getInt(R.styleable.numview_textSize, 60);
-        mTextColor = typedArray.getColor(R.styleable.numview_textColor, Color.BLACK);
-        mNum = typedArray.getInt(R.styleable.numview_num, 0);
-        mChangeNum = typedArray.getInt(R.styleable.numview_changeNum, 1);
-        mMaxNum = typedArray.getInt(R.styleable.numview_maxNum, 99999);
-        mMinNum = typedArray.getInt(R.styleable.numview_minNum, 0);
-        mRound = typedArray.getInt(R.styleable.numview_round, 5);
-        mRectLength = typedArray.getInt(R.styleable.numview_rectLength, 80);
-        mRectColor = typedArray.getColor(R.styleable.numview_rectColor, Color.BLACK);
-        isStartAnima = typedArray.getBoolean(R.styleable.numview_isStartAnima, true);
+        mIntervalLength = typedArray.getInt(R.styleable.numview_nvIntervalLength, 12);
+        mTextLength = typedArray.getInt(R.styleable.numview_nvTextLength, 6);
+        mTextSize = typedArray.getInt(R.styleable.numview_nvTextSize, 60);
+        mTextColor = typedArray.getColor(R.styleable.numview_nvTextColor, Color.BLACK);
+        mNum = typedArray.getInt(R.styleable.numview_nvNum, 0);
+        mChangeNum = typedArray.getInt(R.styleable.numview_nvChangeNum, 1);
+        mMaxNum = typedArray.getInt(R.styleable.numview_nvMaxNum, 99999);
+        mMinNum = typedArray.getInt(R.styleable.numview_nvMinNum, 0);
+        mRound = typedArray.getInt(R.styleable.numview_nvRound, 5);
+        mRectLength = typedArray.getInt(R.styleable.numview_nvRectLength, 80);
+        mRectColor = typedArray.getColor(R.styleable.numview_nvRectColor, Color.BLACK);
+        isStartAnima = typedArray.getBoolean(R.styleable.numview_nvIsStartAnima, true);
 
 
 
