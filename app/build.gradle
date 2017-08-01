@@ -55,7 +55,7 @@ android {
     lintOptions {
         abortOnError false //经常由于lint错误终止，而这些错误又经常是第三方库中的，我们可以跳过这些错误，继续编译
         htmlOutput file("$project.buildDir/reports/lint/lint.html")
-        xmlOutput file("$project.buildDir/reports/lint/lint.xml")
+//        xmlOutput file("$project.buildDir/reports/lint/lint.xml")
     }
 
     compileOptions {
@@ -215,6 +215,7 @@ android {
         enabled = true
     }
 
+    buildToolsVersion '25.0.0'
 }
 
 dependencies {
