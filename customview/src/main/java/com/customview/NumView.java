@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+
 /**
  * @author wangjian
  * @title NumView
@@ -32,7 +33,7 @@ public class NumView extends View {
     private int mHeight;
 
     private int mRectLength;//矩形边长
-    private int mRound;//矩形圆角
+    private float mRound;//矩形圆角
     private int mIntervalLength;//间隔
     private int mTextSize;//默认文字大小
     private int mTextColor;
@@ -77,21 +78,36 @@ public class NumView extends View {
         initAtts(context, attrs);
     }
 
+    /**
+     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+     */
+    public int px2dip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue *  scale + 0.5f);
+    }
+
+    public static int sp2px(Context context,float spValue) {
+        final float scale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * context.getResources().getDisplayMetrics().scaledDensity + 0.5f);
+    }
+
     public void initAtts(Context context, @Nullable AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.numview);
 
-        mIntervalLength = typedArray.getInt(R.styleable.numview_nvIntervalLength, 12);
-        mTextLength = typedArray.getInt(R.styleable.numview_nvTextLength, 6);
-        mTextSize = typedArray.getInt(R.styleable.numview_nvTextSize, 60);
-        mTextColor = typedArray.getColor(R.styleable.numview_nvTextColor, Color.BLACK);
+        mTextLength = typedArray.getInt(R.styleable.numview_nvNumLength, 6);
+        mTextSize = sp2px(context,typedArray.getInt(R.styleable.numview_nvNumSize, 18));
+        mTextColor = typedArray.getColor(R.styleable.numview_nvNumColor, Color.BLACK);
         mNum = typedArray.getInt(R.styleable.numview_nvNum, 0);
         mChangeNum = typedArray.getInt(R.styleable.numview_nvChangeNum, 1);
         mMaxNum = typedArray.getInt(R.styleable.numview_nvMaxNum, 99999);
         mMinNum = typedArray.getInt(R.styleable.numview_nvMinNum, 0);
-        mRound = typedArray.getInt(R.styleable.numview_nvRound, 5);
-        mRectLength = typedArray.getInt(R.styleable.numview_nvRectLength, 80);
+        mRound = typedArray.getFloat(R.styleable.numview_nvRound, px2dip(context, 2));
+//        mRectLength = typedArray.getInt(R.styleable.numview_nvRectLength, 80);
+        mRectLength = px2dip(context, typedArray.getInt(R.styleable.numview_nvRectLength, 20));
+//        mIntervalLength = typedArray.getInt(R.styleable.numview_nvIntervalLength, 12);
+        mIntervalLength = px2dip(context, typedArray.getInt(R.styleable.numview_nvIntervalLength, 5));
         mRectColor = typedArray.getColor(R.styleable.numview_nvRectColor, Color.BLACK);
-        isStartAnima = typedArray.getBoolean(R.styleable.numview_nvIsStartAnima, true);
+        isStartAnima = typedArray.getBoolean(R.styleable.numview_nvIsStartAnima, false);
 
 
 
@@ -104,7 +120,7 @@ public class NumView extends View {
         //方框画笔
         mRectPaint = new Paint();
         mRectPaint.setStyle(Paint.Style.STROKE);
-        mRectPaint.setStrokeWidth(3f);
+        mRectPaint.setStrokeWidth(px2dip(context, 1));
         mRectPaint.setDither(true);
         mRectPaint.setAntiAlias(true);
         mRectPaint.setColor(mRectColor);
@@ -112,7 +128,7 @@ public class NumView extends View {
         //直线画笔
         mLinePaint = new Paint();
         mLinePaint.setStyle(Paint.Style.STROKE);
-        mLinePaint.setStrokeWidth(5f);
+        mLinePaint.setStrokeWidth(px2dip(context, 1));
         mLinePaint.setDither(true);
         mLinePaint.setAntiAlias(true);
         mLinePaint.setColor(mRectColor);
@@ -165,11 +181,11 @@ public class NumView extends View {
         int smallWidth = 0;//控件最小宽度
         smallWidth += 2 * mRectLength;//宽度+矩形边长
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < mTextLength - 1; i++) {
-            sb.append("1");
+        for (int i = 0; i < mTextLength; i++) {
+            sb.append("0");
         }
 
-        mTextPaint.getTextBounds(sb.toString(), 0, mTextLength - 1, mBounds);
+        mTextPaint.getTextBounds(sb.toString(), 0, mTextLength, mBounds);
         mTextWidth = mBounds.width();
         smallWidth += mTextWidth + 2 * mRectLength;//文字宽度+ 两个矩形边距
         if (widthMode == MeasureSpec.EXACTLY && widthSize > smallWidth) {
@@ -212,7 +228,7 @@ public class NumView extends View {
         float centerY = (targetRect.top + targetRect.bottom) / 2;
 
         //画横线
-        canvas.drawLine(left, centerY, targetRect.right - mIntervalLength, centerY, mLinePaint);
+        canvas.drawLine(left, centerY, right, centerY, mLinePaint);
         //画第一个方框
         canvas.drawRoundRect(targetRect, mRound, mRound, mRectPaint);
 

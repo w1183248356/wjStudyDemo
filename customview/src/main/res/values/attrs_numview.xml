@@ -5,19 +5,19 @@
         <!--矩形边长-->
         <attr name="nvRectLength" format="integer"/>
         <!--文字大小-->
-        <attr name="nvTextSize" format="integer"/>
+        <attr name="nvNumSize" format="integer"/>
         <!--矩形中加减号与边框距离-->
         <attr name="nvIntervalLength" format="integer"/>
         <!--默认文字个数-->
-        <attr name="nvTextLength" format="integer"/>
+        <attr name="nvNumLength" format="integer"/>
         <!--显示的文字-->
         <attr name="nvNum" format="integer"/>
         <!--方框圆角-->
-        <attr name="nvRound" format="integer"/>
+        <attr name="nvRound" format="float"/>
         <!--方框颜色颜色-->
         <attr name="nvRectColor" format="color"/>
         <!--字体颜色颜色-->
-        <attr name="nvTextColor" format="color"/>
+        <attr name="nvNumColor" format="color"/>
         <!--每次改变的大小-->
         <attr name="nvChangeNum" format="integer"/>
         <!--最小值-->
