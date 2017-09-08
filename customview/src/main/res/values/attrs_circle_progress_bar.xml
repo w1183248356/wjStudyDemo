@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆形进度条-->
+    <declare-styleable name="circle_progressbar">
+        <!--外圆半径-->
+        <attr name="cpbOutCrlR" format="dimension"/>
+        <!--内圆半径-->
+        <attr name="cpbInCrlR" format="dimension"/>
+        <!--外圆颜色-->
+        <attr name="cpbOutCol" format="color"/>
+        <!--内圆颜色-->
+        <attr name="cpbinCol" format="color"/>
+        <!--显示的文字-->
+        <attr name="cpbOutLineWidth" format="dimension"/>
+
+        <attr name="cpbFinishDrawble" format="reference"/>
+
+
+    </declare-styleable>
+</resources>

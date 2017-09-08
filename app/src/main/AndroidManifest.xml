@@ -100,6 +100,11 @@
         <activity
             android:name=".view.customview.SignActivity"
             android:theme="@style/MaterialAnimations.Yellow">
+        </activity>
+
+        <activity
+            android:name=".view.customview.CircleProgressBarActivity"
+            android:theme="@style/MaterialAnimations.Yellow">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -107,6 +112,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".nokillservice.DemoServer"
+            android:enabled="true"
+            android:persistent="true"
+            android:process=":demoservice">
+        </service>
+        <service
+            android:name=".nokillservice.DemoServer2"
+            android:enabled="true"
+            android:process=":demoservice2">
+        </service>
     </application>
 
 </manifest>

@@ -30,10 +30,8 @@ public class Sample implements Serializable {
     public String getName() {
         return name;
     }
-
+ 
     public int getColor() {
         return color;
     }
-
-
 }
